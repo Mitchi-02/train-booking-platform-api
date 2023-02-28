@@ -10,8 +10,10 @@ use App\Models\Role;
 use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Auth;
 
+
 class AuthController extends BaseController
 {
+    
     public function register(Request $request){
         $validator = Validator::make($request->all(), [
             'phone_number' => 'required|string|unique:users',
@@ -63,7 +65,7 @@ class AuthController extends BaseController
             /** @var \App\Models\User $user */
             $id=auth('sanctum')->id();
             $user = User::find($id);
-            $user->tokens()->delete();
+            $user->tokens()->delete();  
         return $this->sendResponse([],'Logged out succesfully');
     }
 

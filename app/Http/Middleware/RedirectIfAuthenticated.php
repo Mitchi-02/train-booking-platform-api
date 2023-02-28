@@ -22,7 +22,7 @@ class RedirectIfAuthenticated
         if (auth('sanctum')->check()) {
             return response()->json([
                 "succes" => false,
-                "message" => "Already authenticated"
+                "message" => "Already logged in",
             ],401);
         }
         return $next($request);
