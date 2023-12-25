@@ -1,6 +1,7 @@
 # Train Booking API
 
-A Rest API for a train booking platform, built with Laravel 9, MySQL, Stripe and Vonage. 
+A Rest API for a train booking platform, built with Laravel 9 (Repository Design Pattern), MySQL, Stripe and Vonage. 
+
 It handles user authentication, admin features, customer support features, travels management, stations management and booking management This is an academic project I built with my team.
  
 ## Get Started
