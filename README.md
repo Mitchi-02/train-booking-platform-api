@@ -8,6 +8,12 @@ Don't forget to change your env variables: db connection, stripe and vonage keys
 cp .env.example .env
 composer install
 php artisan key:generate
+php artisan migrate
+php artisan migrate:seed
 php artisan ser
+```
+In another shell, start the background queue that handles notifications and jobs using the command:
+```
+php artisan queue:work
 ```
 
