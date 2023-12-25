@@ -11,7 +11,7 @@ cp .env.example .env
 composer install
 php artisan key:generate
 php artisan migrate
-php artisan migrate:seed
+php artisan db:seed
 php artisan ser
 ```
 In another shell, start the background queue that handles notifications and jobs using the command:
