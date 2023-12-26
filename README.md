@@ -5,7 +5,7 @@ A Rest API for a train booking platform, built with Laravel 9 (Repository Design
 It handles user authentication, admin features, customer support features, travels management, stations management and booking management This is an academic project I built with my team.
  
 ## Get Started
-Don't forget to change your env variables: db connection, stripe and vonage keys.
+Don't forget to change your env variables: db connection, email credentials, stripe and vonage keys.
 ```
 cp .env.example .env
 composer install
