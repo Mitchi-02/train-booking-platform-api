@@ -87,7 +87,7 @@ Route::prefix('user')->middleware("auth:sanctum")->controller(UserController::cl
 
 
 
-Route::prefix('support')->middleware(["auth:sdownloadTicketAsPDFanctum", "can:is_supportORpassenger"])
+Route::prefix('support')->middleware(["auth:sanctum", "can:is_supportORpassenger"])
                         ->controller(SupportDashBoardController::class)->group(function(){
 
         Route::get('/my_supportTickets','supportTickets_get');
@@ -118,7 +118,7 @@ Route::prefix('validator')->middleware(["auth:sanctum", "can:is_validator"])
 Route::controller(ReservationController::class)->group(function(){
 
     //affected endpoints after changes
-
+    Route::get('/getAllStations', 'allStations');
     Route::post('/route', 'PassThroughTravels');
     Route::post('/checkAvailability', 'AvAndP');
     Route::get('/travels', 'AllTravels');

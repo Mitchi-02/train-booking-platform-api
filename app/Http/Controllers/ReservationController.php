@@ -6,13 +6,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\BaseController as BaseController;
 
 use App\Http\Repositories\ReservationRepository;
+use App\Http\Repositories\StationRepository;
+use App\Http\Resources\StationResource;
 
 class ReservationController extends BaseController
 {
     private $reservationRepository;
-    public function __construct(ReservationRepository $reservationRepository)
+    private $stationRepository;
+    public function __construct(ReservationRepository $reservationRepository, StationRepository $stationRepository)
     {
         $this->reservationRepository = $reservationRepository;
+        $this->stationRepository = $stationRepository;
     }
 
     public function AvAndP(Request $request){
@@ -32,6 +36,11 @@ class ReservationController extends BaseController
         } else {
             return $this->sendError($response['errors']);
         }
+    }
+
+    public function allStations()
+    {
+        return StationResource::collection($this->stationRepository->all());
     }
 
     public function AllTravels(){

@@ -210,9 +210,6 @@ class ReservationRepository
     }
 
     public function AllTravels0(){
-
-        //return $this->sendResponse(DetailedTravelResource::collection(Travel::all()),
-          //      "All travels retreived successfully");
         return DetailedTravelResource::collection(Travel::all());
     }
 
