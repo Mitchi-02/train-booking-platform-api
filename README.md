@@ -12,6 +12,7 @@ composer install
 php artisan key:generate
 php artisan migrate
 php artisan db:seed
+php artisan storage:link
 php artisan ser
 ```
 In another shell, start the background queue that handles notifications and jobs using the command:
